@@ -17,11 +17,6 @@ var rootCmd = &cobra.Command{
 
 	Run: func(cmd *cobra.Command, args []string) { 
 		util.Init()
-		// Get all files in the templates directory
-		// Print all files in the templates directory
-		// Prompt user to select a template
-		// Prompt user to enter a name for the new project
-		// Clone the selected template to the new project name
 	},
 }
 
