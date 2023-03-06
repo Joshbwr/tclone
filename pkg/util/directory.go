@@ -100,18 +100,21 @@ func Init(){
 	folders, err := getFoldersInDirectory()
 	if err != nil {
 		fmt.Println("Error reading directory: %w", err)
+		os.Exit(500)
 	}
 
 	// build prompt options and prompt user to select a template
 	selectedTemplate, err := buildProjectSelection(folders)
 	if err != nil {
 		fmt.Println("Error selecting project template: %w", err)
+		os.Exit(500)
 	}
 
 	// prompt user to enter a name for the new project
 	newProjectName, err := namePrompt()
 	if err != nil {
 		fmt.Println("Error getting project name: %w", err)
+		os.Exit(500)
 	}
 	
 	// clone the selected template to the new project name and current directory
